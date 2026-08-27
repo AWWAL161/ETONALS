@@ -1,0 +1,3281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ETONALS | Classic Gents Clothing</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f7f5f0;
+    color:#111;
+    font-family:"DM Sans",Arial,sans-serif;
+}
+
+body.locked{
+    overflow:hidden;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+/* =========================================================
+   TOP DELIVERY BAR
+========================================================= */
+
+.top-bar{
+    width:100%;
+    height:38px;
+
+    background:#000;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    font-size:10px;
+    font-weight:600;
+
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+
+    position:sticky;
+    top:0;
+    z-index:1001;
+}
+
+.top-bar span{
+    color:#fff;
+}
+
+@media(max-width:500px){
+
+    .top-bar{
+        height:34px;
+        padding:0 12px;
+        font-size:8px;
+        letter-spacing:1.5px;
+    }
+
+    header{
+        top:34px;
+    }
+
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:38px;
+    z-index:1000;
+    background:rgba(247,245,240,.96);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #ddd8cd;
+}
+
+.navbar{
+    height:82px;
+    max-width:1450px;
+    margin:auto;
+    padding:0 35px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:"Playfair Display",serif;
+    font-size:31px;
+    letter-spacing:7px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#9b7a3c;
+}
+
+.nav-links{
+    display:flex;
+    gap:34px;
+}
+
+.nav-links a{
+    color:#111;
+    text-decoration:none;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:#9b7a3c;
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.account-button{
+    border:1px solid #111;
+    background:transparent;
+    color:#111;
+    padding:11px 15px;
+    cursor:pointer;
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+.account-button:hover{
+    background:#9b7a3c;
+    border-color:#9b7a3c;
+    color:#fff;
+}
+
+.icon-btn{
+    border:0;
+    background:none;
+    cursor:pointer;
+    font-size:22px;
+    padding:8px;
+}
+
+.cart-button{
+    border:1px solid #111;
+    background:#111;
+    color:#fff;
+    padding:11px 17px;
+    cursor:pointer;
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+.cart-button:hover{
+    background:#9b7a3c;
+    border-color:#9b7a3c;
+}
+
+.cart-count{
+    background:#fff;
+    color:#111;
+    border-radius:50%;
+    padding:2px 6px;
+    margin-left:4px;
+}
+
+/* ================= ENTRY AUTH ================= */
+
+.entry-modal{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.67),
+            rgba(0,0,0,.82)
+        ),
+        url("https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?auto=format&fit=crop&w=2200&q=90")
+        center/cover;
+
+    backdrop-filter:blur(8px);
+}
+
+.entry-modal.hidden{
+    display:none;
+}
+
+.auth-box{
+    width:470px;
+    max-width:100%;
+    max-height:calc(100vh - 40px);
+    overflow:auto;
+
+    position:relative;
+
+    background:#f7f5f0;
+
+    padding:48px 42px;
+
+    border-top:3px solid #9b7a3c;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.55);
+
+    animation:authIn .6s ease;
+}
+
+.auth-close{
+    position:absolute;
+    top:12px;
+    right:16px;
+    border:0;
+    background:none;
+    color:#555;
+    font-size:28px;
+    line-height:1;
+    cursor:pointer;
+}
+
+.auth-close:hover{
+    color:#9b7a3c;
+}
+
+@keyframes authIn{
+
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.auth-logo{
+    text-align:center;
+    font-family:"Playfair Display",serif;
+    font-size:34px;
+    letter-spacing:8px;
+    font-weight:700;
+}
+
+.auth-est{
+    text-align:center;
+    color:#9b7a3c;
+    font-size:10px;
+    letter-spacing:4px;
+    margin-top:8px;
+}
+
+.auth-box h2{
+    text-align:center;
+    font-family:"Playfair Display",serif;
+    font-size:31px;
+    margin:25px 0;
+}
+
+.auth-box input{
+    width:100%;
+    padding:15px 14px;
+    margin-bottom:13px;
+
+    border:1px solid #ccc7bb;
+    background:#fff;
+    outline:none;
+
+    font-size:13px;
+}
+
+.auth-box input:focus{
+    border-color:#9b7a3c;
+}
+
+.auth-submit{
+    width:100%;
+    padding:15px;
+
+    background:#111;
+    color:#fff;
+
+    border:0;
+    cursor:pointer;
+
+    letter-spacing:2px;
+    font-size:11px;
+
+    transition:.25s;
+}
+
+.auth-submit:hover{
+    background:#9b7a3c;
+}
+
+.auth-switch{
+    text-align:center;
+    margin-top:22px;
+    font-size:13px;
+    color:#777;
+}
+
+.auth-switch span:last-child{
+    color:#9b7a3c;
+    cursor:pointer;
+    font-weight:bold;
+    margin-left:5px;
+}
+
+.auth-note{
+    text-align:center;
+    color:#999;
+    font-size:10px;
+    margin-top:25px;
+    line-height:1.6;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:720px;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.45),
+            rgba(0,0,0,.58)
+        ),
+        url("https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?auto=format&fit=crop&w=2200&q=90")
+        center/cover;
+}
+
+.hero-content{
+    max-width:900px;
+    padding:30px;
+}
+
+.hero-label{
+    font-size:12px;
+    letter-spacing:6px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:88px;
+    letter-spacing:13px;
+    margin:22px 0;
+}
+
+.hero p{
+    font-size:17px;
+    margin-bottom:35px;
+}
+
+.hero-button{
+    background:#fff;
+    color:#111;
+    border:0;
+    padding:16px 32px;
+    cursor:pointer;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:600;
+}
+
+.hero-button:hover{
+    background:#9b7a3c;
+    color:#fff;
+}
+
+/* ================= BRAND BAR ================= */
+
+.brand-bar{
+    background:#111;
+    color:#fff;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    text-align:center;
+}
+
+.brand-bar div{
+    padding:25px 10px;
+    border-right:1px solid #333;
+}
+
+.brand-bar strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+    margin-bottom:5px;
+}
+
+.brand-bar span{
+    color:#aaa;
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+    max-width:1450px;
+    margin:auto;
+    padding:90px 35px;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-heading small{
+    color:#9b7a3c;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:11px;
+}
+
+.section-heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:46px;
+    margin-top:12px;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.category-card{
+    height:220px;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    background:#ddd;
+}
+
+.category-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.category-card:hover img{
+    transform:scale(1.07);
+}
+
+.category-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.72)
+        );
+
+    display:flex;
+    align-items:flex-end;
+
+    padding:22px;
+
+    color:#fff;
+}
+
+.category-overlay h3{
+    font-family:"Playfair Display",serif;
+    font-size:23px;
+}
+
+/* ================= SHOP ================= */
+
+.shop-controls{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.search-box{
+    width:330px;
+    max-width:100%;
+
+    padding:14px 18px;
+
+    border:1px solid #ccc7bb;
+    background:#fff;
+
+    outline:none;
+}
+
+.search-box:focus{
+    border-color:#9b7a3c;
+}
+
+.filter-buttons{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+}
+
+.filter{
+    padding:11px 16px;
+
+    border:1px solid #ccc7bb;
+
+    background:white;
+
+    cursor:pointer;
+
+    font-size:11px;
+
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.filter.active,
+.filter:hover{
+    background:#111;
+    color:#fff;
+    border-color:#111;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.product{
+    background:#fff;
+    position:relative;
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+}
+
+.product-image{
+    height:410px;
+    position:relative;
+    overflow:hidden;
+    background:#eee;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.product:hover .product-image img{
+    transform:scale(1.04);
+}
+
+.badge{
+    position:absolute;
+    top:13px;
+    left:13px;
+
+    background:#111;
+    color:#fff;
+
+    padding:7px 10px;
+
+    font-size:9px;
+    letter-spacing:1px;
+
+    z-index:2;
+}
+
+.wishlist{
+    position:absolute;
+    top:12px;
+    right:12px;
+
+    width:36px;
+    height:36px;
+
+    border:0;
+    border-radius:50%;
+
+    background:white;
+
+    cursor:pointer;
+
+    z-index:3;
+
+    font-size:18px;
+}
+
+.wishlist.active{
+    color:#9b1c1c;
+}
+
+.product-info{
+    padding:18px;
+}
+
+.product-category{
+    color:#999;
+    font-size:10px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.product-name{
+    font-family:"Playfair Display",serif;
+    font-size:19px;
+    margin:7px 0;
+}
+
+.fabric{
+    color:#777;
+    font-size:11px;
+    margin-bottom:9px;
+}
+
+.product-price{
+    font-weight:700;
+    color:#9b7a3c;
+    margin-bottom:14px;
+}
+
+.add-cart{
+    width:100%;
+    padding:12px;
+
+    background:#111;
+    color:#fff;
+
+    border:0;
+
+    cursor:pointer;
+
+    font-size:11px;
+    letter-spacing:1.5px;
+}
+
+.add-cart:hover{
+    background:#9b7a3c;
+}
+
+/* ================= CART ================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    z-index:8000;
+
+    display:none;
+}
+
+.overlay.show{
+    display:block;
+}
+
+.cart-panel{
+    position:absolute;
+
+    right:0;
+    top:0;
+
+    height:100%;
+
+    width:470px;
+    max-width:95%;
+
+    background:#f7f5f0;
+
+    padding:28px;
+
+    overflow:auto;
+}
+
+.cart-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    border-bottom:1px solid #ddd;
+
+    padding-bottom:18px;
+}
+
+.cart-top h2{
+    font-family:"Playfair Display",serif;
+    font-size:29px;
+}
+
+.close{
+    border:0;
+    background:none;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.cart-item{
+    display:flex;
+    gap:15px;
+
+    padding:18px 0;
+
+    border-bottom:1px solid #ddd;
+}
+
+.cart-item img{
+    width:85px;
+    height:105px;
+    object-fit:cover;
+}
+
+.cart-details{
+    flex:1;
+}
+
+.cart-details h3{
+    font-family:"Playfair Display",serif;
+    font-size:17px;
+    margin-bottom:5px;
+}
+
+.cart-details small{
+    color:#888;
+}
+
+.cart-item-price{
+    color:#9b7a3c;
+    font-weight:bold;
+    margin:8px 0;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.quantity button{
+    width:27px;
+    height:27px;
+
+    border:1px solid #ccc;
+
+    background:white;
+
+    cursor:pointer;
+}
+
+.remove{
+    border:0;
+    background:none;
+
+    color:#9b1c1c;
+
+    font-size:11px;
+
+    cursor:pointer;
+
+    margin-top:8px;
+}
+
+.cart-total{
+    display:flex;
+    justify-content:space-between;
+
+    font-size:20px;
+    font-weight:bold;
+
+    padding:25px 0;
+}
+
+.checkout{
+    width:100%;
+    padding:16px;
+
+    background:#111;
+    color:white;
+
+    border:0;
+
+    cursor:pointer;
+
+    letter-spacing:2px;
+}
+
+.checkout:hover{
+    background:#9b7a3c;
+}
+
+.empty-cart{
+    text-align:center;
+    color:#888;
+    padding:70px 0;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:#111;
+    color:#fff;
+
+    max-width:none;
+}
+
+.about-inner{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.about-inner small{
+    color:#9b7a3c;
+    letter-spacing:4px;
+}
+
+.about-inner h2{
+    font-family:"Playfair Display",serif;
+    font-size:48px;
+    margin:15px 0 20px;
+}
+
+.about-inner p{
+    color:#bbb;
+    line-height:1.9;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#080808;
+    color:#888;
+
+    padding:50px 35px;
+
+    text-align:center;
+}
+
+.footer-logo{
+    color:#fff;
+
+    font-family:"Playfair Display",serif;
+
+    letter-spacing:6px;
+
+    font-size:25px;
+
+    margin-bottom:12px;
+}
+
+footer span{
+    color:#9b7a3c;
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    background:#111;
+    color:#fff;
+
+    padding:15px 22px;
+
+    z-index:10000;
+
+    transform:translateY(100px);
+    opacity:0;
+
+    transition:.3s;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1100px){
+
+    .products{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero h1{
+        font-size:70px;
+    }
+
+}
+
+@media(max-width:800px){
+
+    .navbar{
+        padding:0 18px;
+        min-height:72px;
+        height:auto;
+        gap:12px;
+    }
+
+    .logo{
+        font-size:26px;
+        letter-spacing:5px;
+    }
+
+    .nav-actions{
+        margin-left:auto;
+    }
+
+    .account-button,
+    .cart-button{
+        min-height:44px;
+        padding:10px 12px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .brand-bar{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .shop-controls{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .search-box{
+        width:100%;
+    }
+
+    .hero{
+        min-height:580px;
+    }
+
+    .hero h1{
+        font-size:48px;
+        letter-spacing:7px;
+    }
+
+    .product-image{
+        height:330px;
+    }
+
+    .filter-buttons{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .filter{
+        min-height:44px;
+    }
+
+    .cart-panel{
+        width:min(470px,100%);
+        padding:22px 18px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .navbar{
+        padding:10px 12px;
+    }
+
+    .logo{
+        font-size:21px;
+        letter-spacing:3px;
+    }
+
+    .nav-actions{
+        gap:4px;
+    }
+
+    .account-button,
+    .cart-button{
+        padding:10px 8px;
+        font-size:10px;
+        letter-spacing:.5px;
+    }
+
+    .icon-btn{
+        padding:8px 4px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .categories{
+        grid-template-columns:1fr;
+    }
+
+    .category-card{
+        height:180px;
+    }
+
+    .hero h1{
+        font-size:39px;
+        letter-spacing:4px;
+    }
+
+    .hero-content{
+        padding:24px 16px;
+    }
+
+    .hero-label{
+        font-size:10px;
+        letter-spacing:3px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .section{
+        padding:60px 18px;
+    }
+
+    .section-heading h2{
+        font-size:36px;
+    }
+
+    .auth-box{
+        padding:38px 24px;
+        width:100%;
+    }
+
+    .auth-logo{
+        font-size:27px;
+        letter-spacing:6px;
+    }
+
+    .auth-box h2{
+        font-size:27px;
+    }
+
+    .auth-switch{
+        line-height:1.6;
+    }
+
+    .cart-item{
+        gap:10px;
+    }
+
+    .cart-item img{
+        width:72px;
+        height:92px;
+    }
+
+    .cart-details h3{
+        font-size:15px;
+    }
+
+    .toast{
+        right:12px;
+        bottom:12px;
+        left:12px;
+        text-align:center;
+    }
+
+}
+
+/* ================= PAGE TRANSITION ================= */
+
+#mainWebsite{
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+}
+
+#mainWebsite.hidden{
+    opacity:0;
+    transform:scale(.98);
+    pointer-events:none;
+    height:0;
+    overflow:hidden;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     TOP DELIVERY BAR
+========================================================= -->
+
+<div class="top-bar">
+    <span>
+        FREE DELIVERY ALL OVER PAKISTAN • ON ORDERS ABOVE PKR 15,000
+    </span>
+</div>
+
+
+<!-- =========================================================
+     ENTRY LOGIN / SIGNUP
+========================================================= -->
+
+<div class="entry-modal" id="authModal">
+
+    <div class="auth-box">
+
+        <button
+            class="auth-close"
+            type="button"
+            onclick="closeAuth()"
+            aria-label="Close sign in"
+            title="Close"
+        >
+            ×
+        </button>
+
+        <div class="auth-logo">
+            ETONALS
+        </div>
+
+        <div class="auth-est">
+            EST. 2026
+        </div>
+
+        <h2 id="authTitle">
+            Welcome Back
+        </h2>
+
+        <form id="authForm">
+
+            <input
+                id="nameInput"
+                type="text"
+                placeholder="Full Name"
+                style="display:none;"
+            >
+
+            <input
+                id="emailInput"
+                type="email"
+                placeholder="Email Address"
+                required
+            >
+
+            <input
+                id="passwordInput"
+                type="password"
+                placeholder="Password"
+                required
+            >
+
+            <button
+                class="auth-submit"
+                type="submit"
+            >
+                LOGIN
+            </button>
+
+        </form>
+
+        <div class="auth-switch">
+
+            <span id="authText">
+                New to ETONALS?
+            </span>
+
+            <span
+                id="authSwitch"
+                onclick="switchAuth()"
+                role="button"
+                tabindex="0"
+            >
+                Create Account
+            </span>
+
+        </div>
+
+        <div class="auth-note">
+            ENTER THE WORLD OF ETONALS
+            <br>
+            CLASSIC CLOTHING • MODERN GENTLEMEN
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MAIN WEBSITE
+========================================================= -->
+
+<div id="mainWebsite">
+
+<header>
+
+<nav class="navbar">
+
+    <div class="logo">
+        ETON<span>A</span>LS
+    </div>
+
+    <div class="nav-links">
+
+        <a onclick="go('home')">
+            Home
+        </a>
+
+        <a onclick="go('shop')">
+            Shop
+        </a>
+
+        <a onclick="go('about')">
+            About
+        </a>
+
+    </div>
+
+    <div class="nav-actions">
+
+        <button
+            class="account-button"
+            type="button"
+            onclick="openAuth()"
+        >
+            ACCOUNT
+        </button>
+
+        <button
+            class="icon-btn"
+            onclick="showWishlist()"
+            title="Wishlist"
+        >
+            ♡
+        </button>
+
+        <button
+            class="cart-button"
+            onclick="openCart()"
+        >
+            CART
+
+            <span
+                class="cart-count"
+                id="cartCount"
+            >
+                0
+            </span>
+
+        </button>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            ETONALS — EST. 2026
+        </div>
+
+        <h1>
+            ETONALS
+        </h1>
+
+        <p>
+            Classic clothing. Modern gentleman.
+        </p>
+
+        <button
+            class="hero-button"
+            onclick="go('shop')"
+        >
+            Explore Collection
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BRAND BAR
+========================================================= -->
+
+<div class="brand-bar">
+
+    <div>
+        <strong>QUALITY FABRICS</strong>
+        <span>Selected materials</span>
+    </div>
+
+    <div>
+        <strong>CLASSIC DESIGN</strong>
+        <span>Timeless silhouettes</span>
+    </div>
+
+    <div>
+        <strong>MADE FOR GENTS</strong>
+        <span>Everyday style</span>
+    </div>
+
+    <div>
+        <strong>ETONALS QUALITY</strong>
+        <span>Built with attention</span>
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     CATEGORIES
+========================================================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <small>
+            DISCOVER
+        </small>
+
+        <h2>
+            Shop By Collection
+        </h2>
+
+    </div>
+
+    <div class="categories">
+
+        <div
+            class="category-card"
+            onclick="chooseCategory('Dress Shirts')"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=85"
+                alt="Dress Shirts"
+            >
+
+            <div class="category-overlay">
+                <h3>Dress Shirts</h3>
+            </div>
+
+        </div>
+
+        <div
+            class="category-card"
+            onclick="chooseCategory('T-Shirts')"
+        >
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW9yj93gMgrEnLqsAUjVIY4vKv_nR-zTG1_7IttLkV-Q&s=10"
+                alt="T-Shirts"
+            >
+
+            <div class="category-overlay">
+                <h3>T-Shirts</h3>
+            </div>
+
+        </div>
+
+        <div
+            class="category-card"
+            onclick="chooseCategory('Jackets')"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1000&q=85"
+                alt="Jackets"
+            >
+
+            <div class="category-overlay">
+                <h3>Jackets</h3>
+            </div>
+
+        </div>
+
+        <div
+            class="category-card"
+            onclick="chooseCategory('Jerseys')"
+        >
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdP5dkrYg2Zc4rleDsZRhBYSXqak9CtNV-YLuPxV6znQ&s=10"
+                alt="Football Jerseys"
+            >
+
+            <div class="category-overlay">
+                <h3>Football Jerseys</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SHOP
+========================================================= -->
+
+<section
+    class="section"
+    id="shop"
+>
+
+    <div class="section-heading">
+
+        <small>
+            ETONALS COLLECTION
+        </small>
+
+        <h2>
+            The Collection
+        </h2>
+
+    </div>
+
+    <div class="shop-controls">
+
+        <input
+            id="search"
+            class="search-box"
+            type="text"
+            placeholder="Search ETONALS..."
+            oninput="renderProducts()"
+        >
+
+        <div class="filter-buttons">
+
+            <button
+                class="filter active"
+                onclick="setCategory('All',this)"
+            >
+                All
+            </button>
+
+            <button
+                class="filter"
+                onclick="setCategory('Dress Shirts',this)"
+            >
+                Dress Shirts
+            </button>
+
+            <button
+                class="filter"
+                onclick="setCategory('T-Shirts',this)"
+            >
+                T-Shirts
+            </button>
+
+            <button
+                class="filter"
+                onclick="setCategory('Jackets',this)"
+            >
+                Jackets
+            </button>
+
+            <button
+                class="filter"
+                onclick="setCategory('Jerseys',this)"
+            >
+                Jerseys
+            </button>
+
+        </div>
+
+    </div>
+
+    <div
+        class="products"
+        id="products"
+    ></div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section
+    class="section about"
+    id="about"
+>
+
+    <div class="about-inner">
+
+        <small>
+            THE ETONALS STORY
+        </small>
+
+        <h2>
+            Classic Never Fades.
+        </h2>
+
+        <p>
+            ETONALS creates classic menswear for modern gentlemen.
+            From dress shirts and everyday T-shirts to jackets
+            and football-inspired jerseys, our collection
+            focuses on comfort, character and timeless style.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CART
+========================================================= -->
+
+<div
+    class="overlay"
+    id="cartOverlay"
+>
+
+    <div class="cart-panel">
+
+        <div class="cart-top">
+
+            <h2>
+                Your Cart
+            </h2>
+
+            <button
+                class="close"
+                onclick="closeCart()"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-total">
+
+            <span>
+                Total
+            </span>
+
+            <span id="cartTotal">
+                Rs. 0
+            </span>
+
+        </div>
+
+        <button
+            class="checkout"
+            onclick="checkout()"
+        >
+            CHECKOUT
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="toast"
+    id="toast"
+></div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        ETONALS
+    </div>
+
+    Classic Gents Clothing
+
+    <br><br>
+
+    © 2026 ETONALS. All Rights Reserved.
+
+</footer>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   PRODUCT DATABASE
+========================================================= */
+
+const products = [
+
+{
+id:1,
+name:"Royal White Oxford",
+category:"Dress Shirts",
+fabric:"Egyptian Cotton",
+price:8999,
+img:"https://www.bigandtallmenswear.co.uk/media/catalog/product/cache/94963f09fbd8a8dba3cc97c9485e8b36/A/6/A6050White-1759998263_1-1760022942_1.jpg"
+},
+
+{
+id:2,
+name:"Midnight Black Dress Shirt",
+category:"Dress Shirts",
+fabric:"Premium Cotton",
+price:9499,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh9SeRrL_Lft1aG_PWPGI4c37bqEcixDJquHP081jZyA&s=10"
+},
+
+{
+id:3,
+name:"Sky Blue Classic",
+category:"Dress Shirts",
+fabric:"Oxford Cotton",
+price:8499,
+img:"https://leafclothing.pk/cdn/shop/files/LeafClothingLightBlueMen_sDressShirt.png?v=1744377696&width=720"
+},
+
+{
+id:4,
+name:"Burgundy Gentleman",
+category:"Dress Shirts",
+fabric:"Silk Cotton",
+price:9999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXNfvMkD46-HTfc-5OVJl6cYAKCo4teRClzUNSjpg6tQ&s=10"
+},
+
+{
+id:5,
+name:"Ivory Signature",
+category:"Dress Shirts",
+fabric:"Linen Cotton",
+price:8799,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_0ipfRxAshsvjafUQGpXjBx5mWcqGh1xbFEIc9UHnfg&s=10"
+},
+
+{
+id:6,
+name:"Forest Green Oxford",
+category:"Dress Shirts",
+fabric:"Oxford Cotton",
+price:8999,
+img:"https://uniworthshop.com/cdn/shop/files/CS2417R......jpg?v=1769848292&width=360"
+},
+{
+id:7,
+name:"Royal Navy",
+category:"Dress Shirts",
+fabric:"Premium Cotton",
+price:9299,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpeTrw9YkhDtXfALnf-q4ip1zXJIrqcFeZOiEaI6l3KQ&s=10"
+},
+
+{
+id:8,
+name:"Champagne Silk Touch",
+category:"Dress Shirts",
+fabric:"Silk Blend",
+price:10999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlf8PkO2XBjEeFRYGUz0CsfHkun8NxZYx-PenXoxwwgg&s=10"
+},
+
+{
+id:9,
+name:"Stone Beige",
+category:"Dress Shirts",
+fabric:"Linen",
+price:8499,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShRianW1yzTt6MY6u-EsqbWYOKBO2ecn2Fm5IOaXxvjw&s=10"
+},
+
+{
+id:10,
+name:"Steel Grey",
+category:"Dress Shirts",
+fabric:"Premium Cotton",
+price:8999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjl4rrBKjn35DM21fROzN5HGoznbRTrNS_fHruGqVLiQ&s=10"
+},
+
+{
+id:11,
+name:"Royal Purple",
+category:"Dress Shirts",
+fabric:"Cotton Satin",
+price:9799,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGlGjnVGVQoZC-xQOAi8_-M3cEms6IKJnaHMBHWXAk9A&s=10"
+},
+
+{
+id:12,
+name:"Ocean Teal",
+category:"Dress Shirts",
+fabric:"Linen Cotton",
+price:8999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-RIXGvZnyH3iFk4AqHdTjYWbKeiJl9qIDPYSrqso27Q&s=10"
+},
+
+{
+id:23,
+name:"ETONALS Essential Black",
+category:"T-Shirts",
+fabric:"Premium Jersey Cotton",
+price:4999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6hSds8iLBKvQj6h9piKt2QsUOmwSz-HG7gaEkXZYW-g&s=10"
+},
+
+{
+id:24,
+name:"Essential White",
+category:"T-Shirts",
+fabric:"Heavyweight Cotton",
+price:4999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgaYRbsn7LOE61yNuzDWzwPGF56ULmJaO13lKYaLvEQQ&s=10"
+},
+
+{
+id:25,
+name:"cyan Minimal",
+category:"T-Shirts",
+fabric:"Organic Cotton",
+price:5299,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmEcBB82QmEAVWAiRq7AxfYqlnf_znlGw8IwwCXfkJug&s=10"
+},
+
+{
+id:26,
+name:"Navy Signature",
+category:"T-Shirts",
+fabric:"Premium Cotton",
+price:5499,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqNQT2wOv044zk_TlubxMs3MSaoh3oMWieVdpoy8Jj2w&s=10"
+},
+
+{
+id:27,
+name:"Olive Essential",
+category:"T-Shirts",
+fabric:"Cotton Jersey",
+price:4999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKjCWM3ZR9-FotdmXasRt6gwwYRxAwDVvJMIuuh0jMNQ&s=10"
+},
+
+{
+id:28,
+name:"Burgundy Essential",
+category:"T-Shirts",
+fabric:"Heavy Cotton",
+price:5199,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAS9hwuhtmYSSTXJALix0T6gzbGSv2uojQbvVXLqflYA&s=10"
+},
+
+{
+id:29,
+name:"Cream Luxury Tee",
+category:"T-Shirts",
+fabric:"Supima Cotton",
+price:5999,
+img:"https://image.hm.com/assets/hm/93/a5/93a560e3a4ff5271c18efd717d2fd39cd0b5ff86.jpg?imwidth=2160"
+},
+
+{
+id:30,
+name:"Grey Essential",
+category:"T-Shirts",
+fabric:"Organic Cotton",
+price:4999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh-77FGX4GISm0xpeZUAGPby0PnzDsRA8fcTBEBEyfkA&s=10"
+},
+
+{
+id:73,
+name:"Black Heritage Jacket",
+category:"Jackets",
+fabric:"Premium Leather",
+price:24999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReDDE34UhnzttXkg75qqIDnmWaxrswA7y1qRKb3oybLQ&s=10"
+},
+
+{
+id:74,
+name:"Classic Brown Jacket",
+category:"Jackets",
+fabric:"Leather",
+price:22999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Xu5f0fq4Ezd1uzTEcU1DxvjYFdZXDrA2tUU7qdbHzTV9HMLFE2a-wr8I&s=10"
+},
+
+{
+id:75,
+name:"Midnight Bomber",
+category:"Jackets",
+fabric:"Premium Nylon",
+price:16999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH8eWsRhtd2IHMvNPixyF1CtMlhzintRE4H1dxbirIzg&s=10"
+},
+
+{
+id:76,
+name:"Beige Heritage Jacket",
+category:"Jackets",
+fabric:"Cotton Twill",
+price:14999,
+img:"https://johnstonsofelgin.com/cdn/shop/files/TD000546-RU7861CAMEL-BLUEHERRINGBONE_8746_RT_flat_lay.jpg?v=1778747173&width=1946"
+},
+
+{
+id:77,
+name:"Navy Wool Jacket",
+category:"Jackets",
+fabric:"Wool Blend",
+price:21999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1eNskAeA_HClXWOrcZOyM8kKpoAZMqkhLEAUVSEMDDw&s=10"
+},
+
+{
+id:78,
+name:"ETONALS Signature Jacket",
+category:"Jackets",
+fabric:"Premium Wool",
+price:27999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfYOcP6KBtVsciRMdPC9ledhIBrXdEORnDksEqUHFSzQ&s=10"
+},
+
+{
+id:79,
+name:"Madrid Royal Jersey",
+category:"Jerseys",
+fabric:"Performance Knit",
+price:7999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYFopLD_Qy9heVEaL0Mvfemfwm6UZ3LCsLYKZdYZ0yqA&s=10"
+},
+
+{
+id:80,
+name:"Brazil Samba Jersey",
+category:"Jerseys",
+fabric:"Premium Performance",
+price:8299,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnHVDjYWSo_wwdzJgomVgVllrtAIRHe2x4P6QHrbmjJQ&s=10"
+},
+
+{
+id:81,
+name:"Argentina Sky Blue Jersey",
+category:"Jerseys",
+fabric:"Performance Knit",
+price:8499,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7KLmRZ5WAIPMN5xQsNMQy444MxL4jqJrRmPJKcnHkpA&s=10"
+},
+
+{
+id:82,
+name:"Germany Purple Jersey",
+category:"Jerseys",
+fabric:"Technical Knit",
+price:7999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTURQrIy90oe2yc4RbUfhf0z5LhZ2Kgnti1xObckhVQXQ&s=10"
+},
+
+{
+id:83,
+name:"Germany Black Gold Jersey",
+category:"Jerseys",
+fabric:"Premium Knit",
+price:8299,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpDb-uT62CpqG09LYmC--_M5Vv2GkgNVCepSwT94R5qg&s=10"
+},
+
+{
+id:84,
+name:"Portugal Crimson Jersey",
+category:"Jerseys",
+fabric:"Luxury Knit",
+price:8999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoBIw9-RZd_LKdcnhywnbSPPx-m6u75OB4NhOTQ4RdVg&s=10"
+},
+
+{
+id:85,
+name:"England White Classic Jersey",
+category:"Jerseys",
+fabric:"Performance Mesh",
+price:7999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTubETmZbp180npFe2e9MRTR-c6ho1kP370CuoEj7Gk1Q&s=10"
+},
+
+{
+id:86,
+name:"Spain Roja Jersey",
+category:"Jerseys",
+fabric:"Dry-Fit Performance",
+price:8199,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsU5N_Zu2T0zIjs7aWo6d_bxfQmjiT7sWEeb9b3H8wTQ&s=10"
+},
+
+{
+id:87,
+name:"Italy Azzurri Jersey",
+category:"Jerseys",
+fabric:"Premium Knit",
+price:8499,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlnugwuUPo3CyCpZoyA65tqCb0mYcMwCz9z3IbaUj6LA&s=10"
+},
+
+{
+id:88,
+name:"Netherlands Orange Jersey",
+category:"Jerseys",
+fabric:"Performance Knit",
+price:8299,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUxc7c5skte0mfp8aMl7HaNbQCLIG7dKIMJPB3ffPwyw&s=10"
+},
+
+{
+id:89,
+name:"Belgium Red Jersey",
+category:"Jerseys",
+fabric:"Technical Fabric",
+price:7999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPDNqVJNKkHBe8H7rhKhc08HTdzyRi3iVLSnyNoXHseA&s=10"
+},
+
+{
+id:90,
+name:"Croatia Check Jersey",
+category:"Jerseys",
+fabric:"Performance Mesh",
+price:8399,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX1hAV3zxaFl77Xw1E7FGbvbvEvoAiCcYAKQOfd17IKQ&s=10"
+},
+
+{
+id:91,
+name:"Japan Samurai Blue Jersey",
+category:"Jerseys",
+fabric:"Premium Performance",
+price:8499,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNNZRNExLyI8T4YDcmuxFMlJayRCci4nOHpXmhn2pSXA&s=10"
+},
+
+{
+id:92,
+name:"Mexico Verde Jersey",
+category:"Jerseys",
+fabric:"Dry-Fit Knit",
+price:8199,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYeQ-K-hcvtlI-gPEgNccD-IhNeeSX4Co6H12zaz8XVQ&s=10"
+},
+
+{
+id:93,
+name:"Morocco Atlas Red Jersey",
+category:"Jerseys",
+fabric:"Performance Knit",
+price:8299,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNEAhORbbhu_U9zuJEYhtdcf2SmL910xQdb6m3S8QQWA&s"
+},
+
+{
+id:94,
+name:"Uruguay Celeste Jersey",
+category:"Jerseys",
+fabric:"Technical Knit",
+price:7999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMv5wex_O6jV0wfTrYDTfXQ-OCmwpLAEBPcoi9Yjp85g&s=10"
+},
+
+{
+id:95,
+name:"Colombia Golden Jersey",
+category:"Jerseys",
+fabric:"Premium Knit",
+price:8399,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR4HxGIGGq1uJYZqJXnZTdS0PD_vMuB-Cux2o7J9TuPw&s=10"
+
+},
+
+{
+id:96,
+name:"Turkey Crescent Jersey",
+category:"Jerseys",
+fabric:"Performance Mesh",
+price:8199,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwaNKiPKh35-K_E3ckaz9pw5kBD1GZczIhzrXN5OfnVMmR4Ka_FBKV9vQ&s=10"
+},
+
+{
+id:97,
+name:"USA Liberty Jersey",
+category:"Jerseys",
+fabric:"Dry-Fit Performance",
+price:7999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVz5ImDS3rulzfBq_SA28DIKO-w5XJ3plx1um2Ts2Jow&s=10"
+},
+
+{
+id:98,
+name:"Saudi Green Jersey",
+category:"Jerseys",
+fabric:"Premium Performance",
+price:8299,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0xPB_sSqy9aDTnSuhg3CWMtTrUaSoS4C9xVXfk3vZVA&s=10"
+},
+
+{
+id:99,
+name:"Pakistan Green Star Jersey",
+category:"Jerseys",
+fabric:"Performance Knit",
+price:7999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSpjiLw5wSij6SX8f9qqdWdhxcO96EB_5_7GSUasjw4g&s=10"
+},
+
+{
+id:100,
+name:"manchester nex-gen Jersey",
+category:"Jerseys",
+fabric:"Technical Fabric",
+price:8199,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTywglDMJZv544cUgzqUILPl8bSO6t1I52nUBQf5J3APQ&s=10"
+},
+
+{
+id:101,
+name:"Brazil Black Edition Jersey",
+category:"Jerseys",
+fabric:"Premium Knit",
+price:8799,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdDZPuoB-VGzRMCO6YhS3iePaHDjVBjIfV4oEx7I-cAg&s=10"
+},
+
+{
+id:102,
+name:"inter millan snake Jersey",
+category:"Jerseys",
+fabric:"Performance Mesh",
+price:8699,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG8jnZJRXe4X0r1mhqLuAg6zGKs9ac7a97pWNjaJz2bg&s=10"
+},
+
+{
+id:103,
+name:"Madrid Black Gold Jersey",
+category:"Jerseys",
+fabric:"Luxury Performance",
+price:8999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8bil4Py0Kgg0vBhiJFqANdt9kdH4tB5SkJkMdkTNHyg&s=10"
+},
+
+{
+id:104,
+name:"mexico Midnight Jersey",
+category:"Jerseys",
+fabric:"Premium Performance",
+price:8799,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9pyFD-iXPnFVhoSYNM7mXdpHMj-Tyf8zw9Vef6NLP-Q&s=10"
+},
+
+{
+id:105,
+name:"Portugal Black Edition",
+category:"Jerseys",
+fabric:"Performance Knit",
+price:8999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsdsLGJ7NPPYor4YgCdwROw0SELISPDb7dJz3oYHgAwQ&s=10"
+},
+
+{
+id:106,
+name:"brazil tocot  Edition",
+category:"Jerseys",
+fabric:"Technical Knit",
+price:8599,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyTf3immw2UlmjND-b746d-rsmaiQyIS2MrMjqbGoE2Q&s"
+},
+
+{
+id:107,
+name:"England Midnight Jersey",
+category:"Jerseys",
+fabric:"Premium Knit",
+price:8499,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmDoDLSjsHac7WYFGgiiUQ3DMDk7meJDCYPZwe3d6feg&s=10"
+},
+
+{
+id:108,
+name:"ETONALS pink brazil Jersey",
+category:"Jerseys",
+fabric:"Luxury Performance Mesh",
+price:9999,
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSboUiHmY_SfU1tZ0E-gE88nObk3OtJa3ccrDA5tD6UQQ&s=10"
+}
+
+];
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+function readStoredArray(key){
+
+    try{
+
+        const value =
+            JSON.parse(
+                localStorage.getItem(key)
+            );
+
+        return Array.isArray(value) ? value : [];
+
+    }
+    catch(error){
+
+        localStorage.removeItem(key);
+
+        return [];
+
+    }
+
+}
+
+let cart =
+    readStoredArray("etonalsCart");
+
+let wishlist =
+    readStoredArray("etonalsWishlist");
+
+let category = "All";
+
+let wishlistMode = false;
+
+let loginMode = true;
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function money(number){
+
+    return "Rs. " +
+        number.toLocaleString();
+
+}
+
+
+function saveCart(){
+
+    localStorage.setItem(
+        "etonalsCart",
+        JSON.stringify(cart)
+    );
+
+}
+
+
+function saveWishlist(){
+
+    localStorage.setItem(
+        "etonalsWishlist",
+        JSON.stringify(wishlist)
+    );
+
+}
+
+
+function toast(message){
+
+    const box =
+        document.getElementById("toast");
+
+    box.textContent = message;
+
+    box.classList.add("show");
+
+    setTimeout(function(){
+
+        box.classList.remove("show");
+
+    },2200);
+
+}
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+function renderProducts(){
+
+    const container =
+        document.getElementById("products");
+
+    const search =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    let filtered =
+        products.filter(function(product){
+
+            const catMatch =
+                category === "All" ||
+                product.category === category;
+
+            const searchMatch =
+                product.name
+                .toLowerCase()
+                .includes(search) ||
+
+                product.fabric
+                .toLowerCase()
+                .includes(search);
+
+            const wishMatch =
+                !wishlistMode ||
+                wishlist.includes(product.id);
+
+            return (
+                catMatch &&
+                searchMatch &&
+                wishMatch
+            );
+
+        });
+
+
+    if(filtered.length === 0){
+
+        container.innerHTML = `
+
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:70px;
+            ">
+
+                <h3>
+                    No products found.
+                </h3>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        filtered.map(function(product){
+
+            const liked =
+                wishlist.includes(product.id);
+
+            return `
+
+            <article class="product">
+
+                <div class="product-image">
+
+                    ${
+                        product.id <= 5
+                        ?
+                        `<div class="badge">
+                            NEW
+                        </div>`
+                        :
+                        ""
+                    }
+
+                    <button
+                        class="wishlist ${liked ? "active" : ""}"
+                        onclick="toggleWishlist(${product.id})"
+                    >
+                        ${liked ? "♥" : "♡"}
+                    </button>
+
+                    <img
+                        src="${product.img}"
+                        alt="${product.name}"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <div class="product-category">
+                        ${product.category}
+                    </div>
+
+                    <div class="product-name">
+                        ${product.name}
+                    </div>
+
+                    <div class="fabric">
+                        ${product.fabric}
+                    </div>
+
+                    <div class="product-price">
+                        ${money(product.price)}
+                    </div>
+
+                    <button
+                        class="add-cart"
+                        onclick="addToCart(${product.id})"
+                    >
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </article>
+
+            `;
+
+        }).join("");
+
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+function setCategory(value,button){
+
+    category = value;
+
+    wishlistMode = false;
+
+    document
+        .querySelectorAll(".filter")
+        .forEach(function(btn){
+
+            btn.classList.remove("active");
+
+        });
+
+
+    if(button){
+
+        button.classList.add("active");
+
+    }
+
+
+    document
+        .getElementById("shop")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+
+    renderProducts();
+
+}
+
+
+function chooseCategory(value){
+
+    category = value;
+
+    wishlistMode = false;
+
+    document
+        .querySelectorAll(".filter")
+        .forEach(function(btn){
+
+            btn.classList.remove("active");
+
+            if(
+                btn.textContent
+                .trim()
+                .toLowerCase()
+                .includes(
+                    value
+                    .replace(" Shirts","")
+                    .toLowerCase()
+                )
+            ){
+
+                btn.classList.add("active");
+
+            }
+
+        });
+
+
+    document
+        .getElementById("shop")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+
+    renderProducts();
+
+}
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+function addToCart(productId){
+
+    const id = Number(productId);
+
+    const product =
+        products.find(function(item){
+
+            return item.id === id;
+
+        });
+
+
+    if(!product){
+
+        toast("This product is unavailable.");
+
+        return false;
+
+    }
+
+
+    const existing =
+        cart.find(function(item){
+
+            return Number(item.id) === id;
+
+        });
+
+
+    if(existing){
+
+        existing.quantity =
+            Math.max(1, Number(existing.quantity) || 0) + 1;
+
+    }
+    else{
+
+        cart.push({
+
+            id:product.id,
+            name:product.name,
+            category:product.category,
+            fabric:product.fabric,
+            price:product.price,
+            img:product.img,
+            quantity:1
+
+        });
+
+    }
+
+
+    saveCart();
+
+    updateCart();
+
+    toast(product.name + " added to cart.");
+
+    return true;
+
+}
+
+
+function updateQuantity(id,change){
+
+    const itemId = Number(id);
+    const amount = Number(change);
+
+    if(!Number.isFinite(itemId) || !Number.isFinite(amount)) return;
+
+    const item =
+        cart.find(function(item){
+
+            return Number(item.id) === itemId;
+
+        });
+
+
+    if(!item) return;
+
+
+    item.quantity =
+        Math.max(0, Number(item.quantity) || 0) + amount;
+
+
+    if(item.quantity <= 0){
+
+        cart =
+            cart.filter(function(item){
+
+                return Number(item.id) !== itemId;
+
+            });
+
+    }
+
+
+    saveCart();
+
+    updateCart();
+
+}
+
+
+function removeItem(id){
+
+    const itemId = Number(id);
+
+    cart =
+        cart.filter(function(item){
+
+            return Number(item.id) !== itemId;
+
+        });
+
+
+    saveCart();
+
+    updateCart();
+
+    toast(
+        "Item removed."
+    );
+
+}
+
+
+function updateCart(){
+
+    const items =
+        document.getElementById("cartItems");
+
+    cart = cart.filter(function(item){
+
+        return (
+            Number.isFinite(Number(item.id)) &&
+            Number.isFinite(Number(item.price)) &&
+            Number(item.quantity) > 0
+        );
+
+    });
+
+    let total = 0;
+
+    let count = 0;
+
+
+    if(cart.length === 0){
+
+        items.innerHTML = `
+
+            <div class="empty-cart">
+
+                Your ETONALS cart is empty.
+
+            </div>
+
+        `;
+
+    }
+    else{
+
+        items.innerHTML =
+            cart.map(function(item){
+
+                const price = Number(item.price);
+                const quantity = Math.max(1, Number(item.quantity) || 1);
+
+                total += price * quantity;
+
+                count +=
+                    quantity;
+
+
+                return `
+
+                <div class="cart-item">
+
+                    <img
+                        src="${item.img}"
+                        alt="${item.name}"
+                    >
+
+                    <div class="cart-details">
+
+                        <h3>
+                            ${item.name}
+                        </h3>
+
+                        <small>
+                            ${item.fabric}
+                        </small>
+
+                        <div class="cart-item-price">
+                            ${money(item.price)}
+                        </div>
+
+                        <div class="quantity">
+
+                            <button
+                                onclick="updateQuantity(${item.id},-1)"
+                            >
+                                −
+                            </button>
+
+                            <span>
+                                ${quantity}
+                            </span>
+
+                            <button
+                                onclick="updateQuantity(${item.id},1)"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                        <button
+                            class="remove"
+                            onclick="removeItem(${item.id})"
+                        >
+                            REMOVE
+                        </button>
+
+                    </div>
+
+                </div>
+
+                `;
+
+            }).join("");
+
+    }
+
+
+    document
+        .getElementById("cartCount")
+        .textContent = count;
+
+
+    document
+        .getElementById("cartTotal")
+        .textContent = money(total);
+
+    saveCart();
+
+}
+
+
+function openCart(){
+
+    document
+        .getElementById("cartOverlay")
+        .classList.add("show");
+
+}
+
+
+function closeCart(){
+
+    document
+        .getElementById("cartOverlay")
+        .classList.remove("show");
+
+}
+
+
+document
+    .getElementById("cartOverlay")
+    .addEventListener(
+        "click",
+        function(e){
+
+            if(e.target === this){
+
+                closeCart();
+
+            }
+
+        }
+    );
+
+
+/* =========================================================
+   WISHLIST
+========================================================= */
+
+function toggleWishlist(id){
+
+    if(wishlist.includes(id)){
+
+        wishlist =
+            wishlist.filter(function(x){
+
+                return x !== id;
+
+            });
+
+        toast(
+            "Removed from wishlist."
+        );
+
+    }
+    else{
+
+        wishlist.push(id);
+
+        toast(
+            "Added to wishlist."
+        );
+
+    }
+
+
+    saveWishlist();
+
+    renderProducts();
+
+}
+
+
+function showWishlist(){
+
+    wishlistMode =
+        !wishlistMode;
+
+
+    if(wishlistMode){
+
+        category = "All";
+
+
+        document
+            .querySelectorAll(".filter")
+            .forEach(function(btn){
+
+                btn.classList.remove("active");
+
+            });
+
+
+        renderProducts();
+
+
+        document
+            .getElementById("shop")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
+
+
+        toast(
+            "Showing your wishlist."
+        );
+
+    }
+    else{
+
+        renderProducts();
+
+    }
+
+}
+
+
+/* =========================================================
+   AUTH
+========================================================= */
+
+function switchAuth(){
+
+    loginMode =
+        !loginMode;
+
+    updateAuth();
+
+}
+
+
+function openAuth(mode){
+
+    loginMode = mode !== "signup";
+
+    updateAuth();
+
+    document
+        .getElementById("authModal")
+        .classList.remove("hidden");
+
+    document.body.classList.add("locked");
+
+}
+
+
+function updateAuth(){
+
+    const title =
+        document.getElementById("authTitle");
+
+    const name =
+        document.getElementById("nameInput");
+
+    const submit =
+        document.querySelector(".auth-submit");
+
+    const text =
+        document.getElementById("authText");
+
+    const switchButton =
+        document.getElementById("authSwitch");
+
+
+    if(loginMode){
+
+        title.textContent =
+            "Welcome Back";
+
+        name.style.display =
+            "none";
+
+        name.required =
+            false;
+
+        submit.textContent =
+            "LOGIN";
+
+        text.textContent =
+            "New to ETONALS?";
+
+        switchButton.textContent =
+            "Create Account";
+
+    }
+    else{
+
+        title.textContent =
+            "Create Account";
+
+        name.style.display =
+            "block";
+
+        name.required =
+            true;
+
+        submit.textContent =
+            "SIGN UP";
+
+        text.textContent =
+            "Already have an account?";
+
+        switchButton.textContent =
+            "Login";
+
+    }
+
+}
+
+
+/* =========================================================
+   AUTH SUBMIT
+========================================================= */
+
+document
+    .getElementById("authForm")
+    .addEventListener(
+        "submit",
+        function(e){
+
+            e.preventDefault();
+
+
+            const name =
+                document
+                .getElementById("nameInput")
+                .value
+                .trim();
+
+
+            const email =
+                document
+                .getElementById("emailInput")
+                .value
+                  .trim()
+                .toLowerCase();
+
+
+            const password =
+                document
+                .getElementById("passwordInput")
+                .value;
+
+
+            let users =
+                JSON.parse(
+                    localStorage.getItem(
+                        "etonalsUsers"
+                    )
+                ) || [];
+
+
+            /* SIGN UP */
+
+            if(!loginMode){
+
+                if(
+                    users.some(function(user){
+
+                        return user.email === email;
+
+                    })
+                ){
+
+                    toast(
+                        "Account already exists."
+                    );
+
+                    return;
+
+                }
+
+
+                users.push({
+
+                    name:name,
+                    email:email,
+                    password:password
+
+                });
+
+
+                localStorage.setItem(
+                    "etonalsUsers",
+                    JSON.stringify(users)
+                );
+
+
+                localStorage.setItem(
+                    "etonalsLoggedIn",
+                    JSON.stringify({
+
+                        name:name,
+                        email:email
+
+                    })
+                );
+
+
+                unlockWebsite();
+
+
+                toast(
+                    "Welcome to ETONALS, " +
+                    name +
+                    "!"
+                );
+
+
+                this.reset();
+
+            }
+
+
+            /* LOGIN */
+
+            else{
+
+                const user =
+                    users.find(function(user){
+
+                        return (
+                            user.email === email &&
+                            user.password === password
+                        );
+
+                    });
+
+
+                if(!user){
+
+                    toast(
+                        "Incorrect email or password."
+                    );
+
+                    return;
+
+                }
+
+
+                localStorage.setItem(
+                    "etonalsLoggedIn",
+                    JSON.stringify({
+
+                        name:user.name,
+                        email:user.email
+
+                    })
+                );
+
+
+                unlockWebsite();
+
+
+                toast(
+                    "Welcome back, " +
+                    user.name +
+                    "!"
+                );
+
+
+                this.reset();
+
+            }
+
+        }
+    );
+
+
+/* =========================================================
+   UNLOCK WEBSITE
+========================================================= */
+
+function unlockWebsite(){
+
+    document
+        .getElementById("authModal")
+        .classList.add("hidden");
+
+
+    document.body.classList.remove("locked");
+
+
+    document
+        .getElementById("mainWebsite")
+        .classList.remove("hidden");
+
+}
+
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
+
+function checkout(){
+
+    if(cart.length === 0){
+
+        toast(
+            "Your cart is empty."
+        );
+
+        return;
+
+    }
+
+
+    const loggedIn =
+        localStorage.getItem(
+            "etonalsLoggedIn"
+        );
+
+
+    if(!loggedIn){
+
+        document
+            .getElementById("authModal")
+            .classList.remove("hidden");
+
+        document.body.classList.add("locked");
+
+        closeCart();
+
+        toast(
+            "Please login first."
+        );
+
+        return;
+
+    }
+
+
+    toast(
+        "Order placed successfully!"
+    );
+
+    cart = [];
+    saveCart();
+    updateCart();
+    closeCart();
+
+}
+
+
+function closeAuth(){
+
+    document
+        .getElementById("authModal")
+        .classList.add("hidden");
+
+    document.body.classList.remove("locked");
+
+    document
+        .getElementById("mainWebsite")
+        .classList.remove("hidden");
+
+}
+
+
+document
+    .getElementById("authModal")
+    .addEventListener(
+        "click",
+        function(event){
+
+            if(event.target === this){
+
+                closeAuth();
+
+            }
+
+        }
+    );
+
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeAuth();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function go(id){
+
+    document
+        .getElementById(id)
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =========================================================
+   START WEBSITE
+========================================================= */
+
+renderProducts();
+
+updateCart();
+
+
+loginMode = true;
+updateAuth();
+
+document.body.classList.add("locked");
+
+document
+    .getElementById("authModal")
+    .classList.remove("hidden");
+
+document
+    .getElementById("mainWebsite")
+    .classList.add("hidden");
+
+</script>
+
+</body>
+</html>
